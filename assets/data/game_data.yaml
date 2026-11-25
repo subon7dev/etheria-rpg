@@ -1,0 +1,95 @@
+# Etheria Game Data Files
+
+# NPC Dialogue (JSON-like simple format)
+npcs:
+  - name: "Elder Eryn"
+    x: 350
+    y: 400
+    dialogue:
+      - "Welcome to Etheria, brave soul. I am Elder Eryn."
+      - "An ancient darkness stirs in the Shadow Realm."
+      - "The Shadow Lord seeks the four Elemental Shards."
+      - "You must gather your party and stop him before it's too late."
+      - "Begin your journey to the east — the forest holds clues."
+    quest: main_01
+
+  - name: "Blacksmith Doren"
+    x: 420
+    y: 380
+    dialogue:
+      - "Ah, an adventurer! I can forge powerful weapons."
+      - "Bring me Forest Herbs and I'll craft you something special."
+      - "The goblins to the east drop good materials too."
+    quest: side_01
+
+  - name: "Scout Mira"
+    x: 300
+    y: 450
+    dialogue:
+      - "I spotted goblin camps east of here. Be careful."
+      - "The dark forest is dangerous after nightfall."
+      - "If you find the Shadow Lord's lair, report back immediately!"
+
+# Waypoints
+waypoints:
+  - name: "Starter Village"
+    x: 300
+    y: 400
+  - name: "Dark Forest Entrance"
+    x: 1200
+    y: 300
+  - name: "Boss Arena Gate"
+    x: 2300
+    y: 400
+
+# Quests
+quests:
+  - id: main_01
+    title: "The Shadow Rises"
+    type: main
+    objectives:
+      - type: kill
+        target: slime
+        required: 5
+        desc: "Defeat 5 Slimes"
+      - type: kill
+        target: goblin
+        required: 1
+        desc: "Defeat the Goblin Leader"
+      - type: reach
+        target: dark_forest
+        required: 1
+        desc: "Reach the Dark Forest"
+    rewards:
+      gold: 500
+      exp: 1000
+      item: Thunder Staff
+
+  - id: side_01
+    title: "Blacksmith's Request"
+    type: side
+    objectives:
+      - type: collect
+        target: forest_herb
+        required: 3
+        desc: "Collect 3 Forest Herbs"
+      - type: kill
+        target: skeleton
+        required: 2
+        desc: "Defeat 2 Skeletons"
+    rewards:
+      gold: 200
+      item: Reinforced Armor
+
+  - id: boss_01
+    title: "Shadow Lord's Lair"
+    type: main
+    objectives:
+      - type: kill
+        target: shadow_lord
+        required: 1
+        desc: "Defeat the Shadow Lord"
+    rewards:
+      gold: 5000
+      exp: 10000
+      item: "Etheria's Blessing"
